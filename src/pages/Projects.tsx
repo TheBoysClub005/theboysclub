@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 
@@ -13,14 +12,14 @@ const Projects = () => {
     {
       title: "Room 404",
       status: "In Development",
-      synopsis: "A psychological thriller about a hotel room that traps its occupants in their worst nightmares, forcing them to confront their deepest fears.",
+      synopsis: "A psychological thriller about four college students who become trapped in a strange dormitory room that seems to exist outside normal reality. As they try to escape, the room begins to manifest their deepest digital secrets and online personas.",
       genre: "Sci-fi thriller",
       visual: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&auto=format&fit=crop"
     },
     {
       title: "In Reverse",
       status: "Script Development",
-      synopsis: "A non-linear narrative that follows a character's life in reverse, revealing how seemingly inconsequential decisions lead to profound consequences.",
+      synopsis: "A nonlinear narrative told predominantly backward, revealing how four friends ended up in a moment of crisis. Each reverse sequence reveals new context that changes our understanding of their relationships and choices.",
       genre: "Drama",
       visual: "https://images.unsplash.com/photo-1581985673473-0784a7a44e39?w=800&auto=format&fit=crop"
     }
@@ -89,7 +88,7 @@ const Projects = () => {
                     <div className="animate-fade-in">
                       <div className="mt-6 pt-4 border-t border-gray-700">
                         <div className="flex justify-between items-center">
-                          <span className="text-xs text-gray-500">Expected completion: 2023</span>
+                          <span className="text-xs text-gray-500">Expected completion: 2025</span>
                           
                           <button className="group flex items-center text-cinematic-accent hover:text-white transition-colors">
                             <span className="text-sm">More details</span>
