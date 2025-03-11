@@ -16,7 +16,7 @@ const Contact = () => {
   const socialLinks = [
     {
       name: "Instagram",
-      url: "https://instagram.com/theboysclub",
+      url: "https://www.instagram.com/theboysclub_filmmakers/",
       icon: <Instagram className="w-6 h-6" />
     },
     {
