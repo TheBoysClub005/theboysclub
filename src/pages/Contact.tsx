@@ -1,6 +1,6 @@
 
 import { useEffect } from 'react';
-import { Instagram, Twitter, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Instagram, Twitter, Linkedin, Mail, ExternalLink, Youtube } from 'lucide-react';
 import { toast } from 'sonner';
 
 const Contact = () => {
@@ -28,6 +28,11 @@ const Contact = () => {
       name: "LinkedIn",
       url: "https://linkedin.com/in/theboysclub",
       icon: <Linkedin className="w-6 h-6" />
+    },
+    {
+      name: "YouTube",
+      url: "https://www.youtube.com/channel/UCujhlqaPO4tFy3k7OIKxz6g",
+      icon: <Youtube className="w-6 h-6" />
     }
   ];
 
