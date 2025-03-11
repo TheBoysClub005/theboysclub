@@ -1,4 +1,6 @@
 
-// This is a binary file that should be replaced with a real MP3 file.
-// For demonstration purposes, we are creating this file, but you'll need to upload an actual MP3 file.
-// Please upload an ambient music file and save it as 'ambient.mp3' in the public directory.
+// This is a placeholder for the ambient MP3 file.
+// You need to upload a real MP3 audio file to this location.
+// The file should be named 'ambient.mp3' and placed in the public directory.
+// Without a valid audio file, the ambient sound feature will not work.
+

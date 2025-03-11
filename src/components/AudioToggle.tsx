@@ -12,35 +12,45 @@ interface AudioToggleProps {
 const AudioToggle = ({ isEnabled, onToggle }: AudioToggleProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [audioLoaded, setAudioLoaded] = useState(false);
+  const [loadFailed, setLoadFailed] = useState(false);
   
   useEffect(() => {
     // Create audio element if it doesn't exist
     if (!audioRef.current) {
-      const audio = new Audio('/ambient.mp3');
-      audio.loop = true;
-      audio.volume = 0.2;
-      
-      // Add event listeners
-      audio.addEventListener('canplaythrough', () => {
-        setAudioLoaded(true);
-        console.log('Audio loaded and ready to play');
-      });
-      
-      audio.addEventListener('error', (e) => {
-        console.error('Audio error:', e);
-        toast.error('Could not load audio file');
-      });
-      
-      audioRef.current = audio;
-      
-      // Attempt preload
-      audio.load();
+      try {
+        const audio = new Audio('/ambient.mp3');
+        audio.loop = true;
+        audio.volume = 0.2;
+        
+        // Add event listeners
+        audio.addEventListener('canplaythrough', () => {
+          setAudioLoaded(true);
+          setLoadFailed(false);
+          console.log('Audio loaded and ready to play');
+        });
+        
+        audio.addEventListener('error', (e) => {
+          console.error('Audio error:', e);
+          setLoadFailed(true);
+          setAudioLoaded(false);
+          toast.error('Could not load audio file. Please upload an MP3 file named "ambient.mp3" to the public directory.');
+        });
+        
+        audioRef.current = audio;
+        
+        // Attempt preload
+        audio.load();
+      } catch (e) {
+        console.error('Failed to initialize audio:', e);
+        setLoadFailed(true);
+        toast.error('Failed to initialize audio player');
+      }
     }
     
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
-        audioRef.current.removeEventListener('canplaythrough', () => setAudioLoaded(true));
+        audioRef.current.removeEventListener('canplaythrough', () => {});
         audioRef.current.removeEventListener('error', () => {});
         audioRef.current = null;
       }
@@ -48,7 +58,7 @@ const AudioToggle = ({ isEnabled, onToggle }: AudioToggleProps) => {
   }, []);
   
   useEffect(() => {
-    if (!audioRef.current || !audioLoaded) return;
+    if (!audioRef.current || !audioLoaded || loadFailed) return;
     
     // Play or pause based on isEnabled state
     if (isEnabled) {
@@ -66,13 +76,19 @@ const AudioToggle = ({ isEnabled, onToggle }: AudioToggleProps) => {
     } else {
       audioRef.current.pause();
     }
-  }, [isEnabled, audioLoaded, onToggle]);
+  }, [isEnabled, audioLoaded, loadFailed, onToggle]);
   
   const handleButtonClick = () => {
-    if (!audioLoaded) {
+    if (loadFailed) {
+      toast.error('Audio file not found. Please upload an MP3 file named "ambient.mp3" to the public directory.');
+      return;
+    }
+    
+    if (!audioLoaded && !loadFailed) {
       toast.info("Audio is still loading, please try again in a moment");
       return;
     }
+    
     onToggle();
   };
   
