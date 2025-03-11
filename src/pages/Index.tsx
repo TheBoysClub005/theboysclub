@@ -9,6 +9,21 @@ const Index = () => {
     document.title = "Nikhil Reddy Nookala | Filmmaker";
   }, []);
 
+  const directors = [
+    {
+      name: "Christopher Nolan",
+      image: "https://upload.wikimedia.org/wikipedia/commons/9/95/Christopher_Nolan_Cannes_2018.jpg",
+    },
+    {
+      name: "SS Rajamouli",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/SS_Rajamouli_at_RRR_Promotion.jpg/800px-SS_Rajamouli_at_RRR_Promotion.jpg",
+    },
+    {
+      name: "Nag Ashwin",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Nag_Ashwin.jpg/330px-Nag_Ashwin.jpg",
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <Hero />
@@ -84,6 +99,27 @@ const Index = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          
+          {/* Director Inspirations */}
+          <div className="mt-24">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-heading font-bold text-white mb-4">Cinematic Inspirations</h2>
+              <p className="text-gray-300 max-w-2xl mx-auto">Visionary directors whose work has profoundly influenced my approach to filmmaking</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {directors.map((director) => (
+                <div key={director.name} className="glass-card rounded-md overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: '1s' }}>
+                  <div className="h-64 overflow-hidden">
+                    <img src={director.image} alt={director.name} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="font-heading text-xl text-white">{director.name}</h3>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
