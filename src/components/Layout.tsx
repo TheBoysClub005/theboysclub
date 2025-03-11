@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Toaster } from '@/components/ui/sonner';
@@ -14,7 +15,7 @@ const Layout = () => {
     // Simulate loading for cinematic effect
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1500);  // Reduced loading time for better mobile experience
 
     return () => clearTimeout(timer);
   }, []);
@@ -28,7 +29,7 @@ const Layout = () => {
   if (loading) {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-cinematic-black z-50">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center px-4">
           <div className="h-0.5 w-24 bg-cinematic-silver overflow-hidden">
             <div className="h-full bg-cinematic-accent animate-reveal-text"></div>
           </div>

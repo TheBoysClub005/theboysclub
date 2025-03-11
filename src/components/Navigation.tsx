@@ -35,24 +35,24 @@ const Navigation = () => {
     <>
       <nav
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6',
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 px-4 md:py-4 md:px-6',
           scrolled ? 'bg-cinematic-black/90 backdrop-blur-md' : 'bg-transparent'
         )}
       >
-        <div className="cinematic-container flex justify-between items-center">
+        <div className="max-w-screen-xl mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2 group">
             <img 
               src="/lovable-uploads/dd83d7de-2447-4b17-8740-05614e83ef0a.png" 
               alt="The Boy's Club Logo" 
-              className="w-10 h-10 transition-transform duration-500 group-hover:rotate-12" 
+              className="w-8 h-8 md:w-10 md:h-10 transition-transform duration-500 group-hover:rotate-12" 
             />
-            <span className="font-heading font-semibold text-white tracking-wider">
+            <span className="font-heading font-semibold text-white tracking-wider text-sm md:text-base">
               <span className="text-cinematic-accent">The</span> Boy's Club
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -87,7 +87,7 @@ const Navigation = () => {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'fixed inset-0 z-40 bg-cinematic-black/95 backdrop-blur-lg transition-transform duration-500 flex flex-col pt-24 px-6',
+          'fixed inset-0 z-40 bg-cinematic-black/95 backdrop-blur-lg transition-transform duration-300 flex flex-col pt-20 px-6',
           isOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >

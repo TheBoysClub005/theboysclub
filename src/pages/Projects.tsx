@@ -27,26 +27,26 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
-      <section className="section-spacing bg-cinematic-black">
-        <div className="cinematic-container">
-          <div className="max-w-3xl mx-auto mb-16">
+    <div className="min-h-screen pt-16 md:pt-20">
+      <section className="py-12 md:py-24 bg-cinematic-black">
+        <div className="px-4 md:px-8 max-w-screen-xl mx-auto">
+          <div className="max-w-3xl mx-auto mb-10 md:mb-16">
             <div className="glass-card p-1 inline-block mb-4">
               <span className="font-mono text-xs text-cinematic-accent">PROJECTS</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 reveal-mask">
+            <h1 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6 reveal-mask">
               Upcoming Productions
             </h1>
             
             <div className="h-px w-24 bg-cinematic-accent mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.5s' }}></div>
             
-            <p className="text-xl text-gray-300 opacity-0 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+            <p className="text-lg md:text-xl text-gray-300 opacity-0 animate-fade-in" style={{ animationDelay: '0.7s' }}>
               Currently developing short films that blend technical innovation with emotional storytelling.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {projects.map((project, index) => (
               <div 
                 key={project.title}
@@ -56,7 +56,7 @@ const Projects = () => {
                 style={{ animationDelay: `${0.3 * (index + 1)}s` }}
                 onClick={() => setActiveProject(index)}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-40 md:h-48 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-cinematic-black/80 z-10" />
                   <img 
                     src={project.visual} 
@@ -70,7 +70,7 @@ const Projects = () => {
                   </div>
                 </div>
                 
-                <div className="p-6">
+                <div className="p-4 md:p-6">
                   <div className="flex justify-between items-start mb-3">
                     <h2 className="text-xl md:text-2xl font-heading font-medium text-white">
                       {project.title}
