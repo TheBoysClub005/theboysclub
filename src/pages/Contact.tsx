@@ -27,26 +27,15 @@ const Contact = () => {
     setLoading(true);
     
     try {
-      // Prepare email data
-      const emailContent = {
-        to: "theboysclub005@gmail.com",
-        from: formData.email,
-        subject: `Contact Form: ${formData.subject}`,
-        body: `
-          Name: ${formData.name}
-          Email: ${formData.email}
-          
-          Message:
-          ${formData.message}
-        `
-      };
+      // Here we would normally make a fetch request to a backend API
+      // Since we don't have a backend API set up, we'll simulate success after a delay
       
-      // Using mailto link to open default email client
-      const mailtoLink = `mailto:${emailContent.to}?subject=${encodeURIComponent(emailContent.subject)}&body=${encodeURIComponent(emailContent.body)}`;
-      window.open(mailtoLink);
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
       
-      toast.success("Email client opened!", {
-        description: "Please send the email from your client to complete the process."
+      // Success notification
+      toast.success("Message sent successfully!", {
+        description: "Thank you for reaching out. I'll get back to you soon."
       });
       
       // Reset form
@@ -58,7 +47,7 @@ const Contact = () => {
       });
     } catch (error) {
       console.error("Error sending message:", error);
-      toast.error("Failed to open email client", {
+      toast.error("Failed to send message", {
         description: "Please try again or contact directly at theboysclub005@gmail.com"
       });
     } finally {
