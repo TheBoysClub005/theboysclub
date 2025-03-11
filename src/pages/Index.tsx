@@ -9,21 +9,6 @@ const Index = () => {
     document.title = "Nikhil Reddy Nookala | Filmmaker";
   }, []);
 
-  const directors = [
-    {
-      name: "Christopher Nolan",
-      image: "/lovable-uploads/40444388-3656-474b-9d11-95f4de32c08c.png",
-    },
-    {
-      name: "SS Rajamouli",
-      image: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202302/ss_rajamouli_oscar-sixteen_nine.jpg?VersionId=jKr7h3J2_CWklqqP.fmP5qRhRFTo1RLI", 
-    },
-    {
-      name: "Nag Ashwin",
-      image: "https://m.media-amazon.com/images/M/MV5BZjM0ZWM0ZGItOGY1NS00MDkwLTgyODMtMDI3NjE3NDVhZDhmXkEyXkFqcGdeQXVyMTQ3Mzk2MDg4._V1_.jpg",
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       <Hero />
@@ -99,35 +84,6 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          
-          {/* Director Inspirations */}
-          <div className="mt-24">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-heading font-bold text-white mb-4">Cinematic Inspirations</h2>
-              <p className="text-gray-300 max-w-2xl mx-auto">Visionary directors whose work has profoundly influenced my approach to filmmaking</p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {directors.map((director) => (
-                <div key={director.name} className="glass-card rounded-md overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: '1s' }}>
-                  <div className="h-64 overflow-hidden">
-                    <img 
-                      src={director.image} 
-                      alt={director.name} 
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "/placeholder.svg";
-                      }}
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <h3 className="font-heading text-xl text-white">{director.name}</h3>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>

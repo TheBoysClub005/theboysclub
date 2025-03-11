@@ -26,17 +26,13 @@ const Hero = () => {
       
       {/* Hero Content */}
       <div className="cinematic-container relative z-10 text-center px-4">
-        <div className="overflow-hidden mb-8">
-          <div className={cn(
-            "transform transition-transform duration-1000",
+        <div className="overflow-hidden mb-4">
+          <p className={cn(
+            "text-cinematic-silver font-mono text-sm tracking-[0.2em] uppercase transform transition-transform duration-1000",
             isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           )}>
-            <img 
-              src="/lovable-uploads/54f1b2cd-173c-4170-be75-e0c91bbc2304.png" 
-              alt="The Boy's Club Logo" 
-              className="h-32 mx-auto" 
-            />
-          </div>
+            From viewer to visionary
+          </p>
         </div>
         
         <div className="overflow-hidden my-6">
