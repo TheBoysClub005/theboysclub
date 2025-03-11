@@ -44,6 +44,15 @@ const Hero = () => {
           </h1>
         </div>
         
+        <div className="overflow-hidden mt-3 mb-3">
+          <h2 className={cn(
+            "font-heading text-xl md:text-2xl text-cinematic-accent transform transition-transform duration-1000 delay-400",
+            isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          )}>
+            Nikhil Reddy Nookala
+          </h2>
+        </div>
+        
         <div className="overflow-hidden mt-6 mb-12">
           <p className={cn(
             "max-w-lg mx-auto text-gray-300 transform transition-transform duration-1000 delay-500",

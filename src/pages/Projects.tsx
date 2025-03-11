@@ -14,7 +14,7 @@ const Projects = () => {
       title: "Room 404",
       status: "In Development",
       synopsis: "A psychological thriller about a hotel room that traps its occupants in their worst nightmares, forcing them to confront their deepest fears.",
-      genre: "Thriller / Horror",
+      genre: "Sci-fi thriller",
       visual: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&auto=format&fit=crop"
     },
     {
