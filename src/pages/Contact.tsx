@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { MessageSquare, Send, Link, Mail } from 'lucide-react';
 import { toast } from 'sonner';
+import { createClient } from '@supabase/supabase-js';
 
 const Contact = () => {
   useEffect(() => {
@@ -27,11 +28,24 @@ const Contact = () => {
     setLoading(true);
     
     try {
-      // Here we would normally make a fetch request to a backend API
-      // Since we don't have a backend API set up, we'll simulate success after a delay
+      // Create a Supabase client
+      const supabase = createClient(
+        import.meta.env.VITE_SUPABASE_URL as string,
+        import.meta.env.VITE_SUPABASE_ANON_KEY as string
+      );
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Call the Supabase Edge Function to send the email
+      const { data, error } = await supabase.functions.invoke('send-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          recipient: 'theboysclub005@gmail.com'
+        }
+      });
+      
+      if (error) throw error;
       
       // Success notification
       toast.success("Message sent successfully!", {
