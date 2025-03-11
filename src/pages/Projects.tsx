@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 
@@ -101,39 +102,6 @@ const Projects = () => {
                 </div>
               </div>
             ))}
-          </div>
-          
-          <div className="mt-24 glass-card p-8 rounded-md opacity-0 animate-fade-in" style={{ animationDelay: '1.5s' }}>
-            <div className="flex flex-col md:flex-row items-center">
-              <div className="w-full md:w-2/3 mb-8 md:mb-0 md:pr-8">
-                <h2 className="text-2xl md:text-3xl font-heading font-medium text-white mb-4">
-                  Collaborate on Future Projects
-                </h2>
-                
-                <p className="text-gray-400 mb-6">
-                  We're always looking to connect with fellow filmmakers, writers, cinematographers, 
-                  and other creatives who share a passion for innovative storytelling.
-                </p>
-                
-                <a 
-                  href="/contact" 
-                  className="inline-flex items-center px-6 py-3 bg-cinematic-accent text-white rounded hover:bg-cinematic-accent/80 transition-colors"
-                >
-                  Get in Touch
-                </a>
-              </div>
-              
-              <div className="w-full md:w-1/3">
-                <div className="relative h-48 rounded-md overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-cinematic-black/80 z-10" />
-                  <img 
-                    src="https://images.unsplash.com/photo-1524026458548-0e5531bf7034?w=800&auto=format&fit=crop" 
-                    alt="Collaboration" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
