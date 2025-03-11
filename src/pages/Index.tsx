@@ -12,15 +12,15 @@ const Index = () => {
   const directors = [
     {
       name: "Christopher Nolan",
-      image: "https://upload.wikimedia.org/wikipedia/commons/9/95/Christopher_Nolan_Cannes_2018.jpg",
+      image: "/lovable-uploads/40444388-3656-474b-9d11-95f4de32c08c.png",
     },
     {
       name: "SS Rajamouli",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/SS_Rajamouli_at_RRR_Promotion.jpg/800px-SS_Rajamouli_at_RRR_Promotion.jpg",
+      image: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202302/ss_rajamouli_oscar-sixteen_nine.jpg?VersionId=jKr7h3J2_CWklqqP.fmP5qRhRFTo1RLI", 
     },
     {
       name: "Nag Ashwin",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Nag_Ashwin.jpg/330px-Nag_Ashwin.jpg",
+      image: "https://m.media-amazon.com/images/M/MV5BZjM0ZWM0ZGItOGY1NS00MDkwLTgyODMtMDI3NjE3NDVhZDhmXkEyXkFqcGdeQXVyMTQ3Mzk2MDg4._V1_.jpg",
     }
   ];
 
@@ -113,7 +113,15 @@ const Index = () => {
               {directors.map((director) => (
                 <div key={director.name} className="glass-card rounded-md overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: '1s' }}>
                   <div className="h-64 overflow-hidden">
-                    <img src={director.image} alt={director.name} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                    <img 
+                      src={director.image} 
+                      alt={director.name} 
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/placeholder.svg";
+                      }}
+                    />
                   </div>
                   <div className="p-4 text-center">
                     <h3 className="font-heading text-xl text-white">{director.name}</h3>
