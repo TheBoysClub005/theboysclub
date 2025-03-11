@@ -43,7 +43,7 @@ const Navigation = () => {
           <Link to="/" className="flex items-center space-x-2 group">
             <Film className="text-cinematic-accent w-6 h-6 transition-transform duration-500 group-hover:rotate-12" />
             <span className="font-heading font-semibold text-white tracking-wider">
-              <span className="text-cinematic-accent">N</span>RN
+              <span className="text-cinematic-accent">The</span> Boy's Club
             </span>
           </Link>
 

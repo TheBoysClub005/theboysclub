@@ -11,18 +11,32 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "Room 404",
+      status: "In Development",
+      synopsis: "A psychological thriller about a hotel room that traps its occupants in their worst nightmares, forcing them to confront their deepest fears.",
+      genre: "Thriller / Horror",
+      visual: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&auto=format&fit=crop"
+    },
+    {
+      title: "In Reverse",
+      status: "Script Development",
+      synopsis: "A non-linear narrative that follows a character's life in reverse, revealing how seemingly inconsequential decisions lead to profound consequences.",
+      genre: "Drama",
+      visual: "https://images.unsplash.com/photo-1581985673473-0784a7a44e39?w=800&auto=format&fit=crop"
+    },
+    {
       title: "Echoes of Time",
       status: "In Development",
       synopsis: "A young photographer in Hyderabad discovers that his camera captures moments from different timelines, forcing him to confront the consequences of altering the past.",
       genre: "Sci-Fi / Drama",
-      visual: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&auto=format&fit=crop"
+      visual: "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=800&auto=format&fit=crop"
     },
     {
       title: "The Last Storyteller",
-      status: "Script Development",
+      status: "Concept Stage",
       synopsis: "In a near-future where digital entertainment has replaced traditional storytelling, an elderly narrator in rural India fights to preserve the art of oral tradition.",
       genre: "Drama",
-      visual: "https://images.unsplash.com/photo-1581985673473-0784a7a44e39?w=800&auto=format&fit=crop"
+      visual: "https://images.unsplash.com/photo-1524026458548-0e5531bf7034?w=800&auto=format&fit=crop"
     },
     {
       title: "Parallel Dreams",
