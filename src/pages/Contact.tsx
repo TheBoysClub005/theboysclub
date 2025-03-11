@@ -1,6 +1,6 @@
 
 import { useEffect } from 'react';
-import { Instagram, Twitter, Linkedin, Mail, ExternalLink, Youtube } from 'lucide-react';
+import { Instagram, Mail, ExternalLink, Youtube } from 'lucide-react';
 import { toast } from 'sonner';
 
 const Contact = () => {
@@ -18,16 +18,6 @@ const Contact = () => {
       name: "Instagram",
       url: "https://www.instagram.com/theboysclub_filmmakers/",
       icon: <Instagram className="w-6 h-6" />
-    },
-    {
-      name: "Twitter",
-      url: "https://twitter.com/theboysclub",
-      icon: <Twitter className="w-6 h-6" />
-    },
-    {
-      name: "LinkedIn",
-      url: "https://linkedin.com/in/theboysclub",
-      icon: <Linkedin className="w-6 h-6" />
     },
     {
       name: "YouTube",
@@ -74,7 +64,7 @@ const Contact = () => {
             </div>
             
             {/* Social Media Links */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto opacity-0 animate-fade-in" style={{ animationDelay: '1.1s' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto opacity-0 animate-fade-in" style={{ animationDelay: '1.1s' }}>
               {socialLinks.map((link, index) => (
                 <a 
                   key={link.name}
