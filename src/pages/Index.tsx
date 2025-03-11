@@ -13,14 +13,17 @@ const Index = () => {
     {
       name: "Christopher Nolan",
       image: "https://upload.wikimedia.org/wikipedia/commons/9/95/Christopher_Nolan_Cannes_2018.jpg",
+      description: "Complex narratives and visual innovation"
     },
     {
       name: "SS Rajamouli",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/SS_Rajamouli_at_RRR_Promotion.jpg/800px-SS_Rajamouli_at_RRR_Promotion.jpg",
+      description: "Grand spectacle and emotional storytelling"
     },
     {
       name: "Nag Ashwin",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Nag_Ashwin.jpg/330px-Nag_Ashwin.jpg",
+      description: "Blending tradition with futuristic vision"
     }
   ];
 
@@ -105,18 +108,30 @@ const Index = () => {
           {/* Director Inspirations */}
           <div className="mt-24">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-heading font-bold text-white mb-4">Cinematic Inspirations</h2>
+              <h2 className="text-3xl font-heading font-bold text-white mb-4">Cinematic Influences</h2>
               <p className="text-gray-300 max-w-2xl mx-auto">Visionary directors whose work has profoundly influenced my approach to filmmaking</p>
             </div>
             
+            {/* Movie posters influence section */}
+            <div className="mb-16">
+              <img 
+                src="/lovable-uploads/ad95f06b-b0c5-4937-ae42-b88547f7dbf9.png" 
+                alt="Cinematic Influences" 
+                className="w-full rounded-lg shadow-lg opacity-0 animate-fade-in" 
+                style={{ animationDelay: '0.8s' }}
+              />
+            </div>
+            
+            {/* Directors grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {directors.map((director) => (
                 <div key={director.name} className="glass-card rounded-md overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: '1s' }}>
                   <div className="h-64 overflow-hidden">
                     <img src={director.image} alt={director.name} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
                   </div>
-                  <div className="p-4 text-center">
-                    <h3 className="font-heading text-xl text-white">{director.name}</h3>
+                  <div className="p-4">
+                    <h3 className="font-heading text-xl text-white mb-2">{director.name}</h3>
+                    <p className="text-gray-400 text-sm">{director.description}</p>
                   </div>
                 </div>
               ))}
