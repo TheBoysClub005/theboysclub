@@ -18,7 +18,11 @@ const AudioToggle = ({ isEnabled, onToggle }: AudioToggleProps) => {
     // Create audio element if it doesn't exist
     if (!audioRef.current) {
       try {
-        const audio = new Audio('/ambient.mp3');
+        // Use an absolute URL to ensure the audio file is found
+        const audioPath = `${window.location.origin}/ambient.mp3`;
+        console.log('Attempting to load audio from:', audioPath);
+        
+        const audio = new Audio(audioPath);
         audio.loop = true;
         audio.volume = 0.2;
         
@@ -31,9 +35,10 @@ const AudioToggle = ({ isEnabled, onToggle }: AudioToggleProps) => {
         
         audio.addEventListener('error', (e) => {
           console.error('Audio error:', e);
+          console.error('Audio src that failed:', audioPath);
           setLoadFailed(true);
           setAudioLoaded(false);
-          toast.error('Could not load audio file. Please upload an MP3 file named "ambient.mp3" to the public directory.');
+          toast.error('Could not load audio file. Please make sure "ambient.mp3" exists in the public directory.');
         });
         
         audioRef.current = audio;
@@ -80,7 +85,7 @@ const AudioToggle = ({ isEnabled, onToggle }: AudioToggleProps) => {
   
   const handleButtonClick = () => {
     if (loadFailed) {
-      toast.error('Audio file not found. Please upload an MP3 file named "ambient.mp3" to the public directory.');
+      toast.error('Audio file not found. Please check console for details.');
       return;
     }
     
