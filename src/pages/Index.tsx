@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Nikhil Reddy Nookala | Filmmaker";
+    document.title = "The Boy's Club | Filmmaking Collective";
   }, []);
 
   return (
@@ -28,9 +28,8 @@ const Index = () => {
               </div>
               
               <p className="text-gray-300 mb-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-                Inspired by the complex narratives of Christopher Nolan, the grand spectacle of 
-                SS Rajamouli, and the innovative vision of Nag Ashwin, I'm crafting stories that 
-                bridge cultures and push boundaries.
+                We're a group of friends from Hyderabad with a shared passion for filmmaking. 
+                Together, we're crafting stories that bridge cultures and push boundaries.
               </p>
               
               <div className="opacity-0 animate-fade-in" style={{ animationDelay: '0.9s' }}>
@@ -38,7 +37,7 @@ const Index = () => {
                   to="/vision" 
                   className="inline-flex items-center text-cinematic-accent hover:text-white transition-colors duration-300"
                 >
-                  Explore My Vision
+                  Explore Our Vision
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </div>
@@ -49,8 +48,8 @@ const Index = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="flex flex-col items-center text-center p-4">
                     <User className="w-10 h-10 text-cinematic-accent mb-3" />
-                    <h3 className="text-lg font-heading font-medium text-white mb-2">About Me</h3>
-                    <p className="text-sm text-gray-400 mb-3">Discover my journey from film enthusiast to creator</p>
+                    <h3 className="text-lg font-heading font-medium text-white mb-2">About Us</h3>
+                    <p className="text-sm text-gray-400 mb-3">Discover our journey from film enthusiasts to creators</p>
                     <Link 
                       to="/about" 
                       className="text-xs uppercase tracking-wide text-cinematic-accent hover:text-white transition-colors"
@@ -62,7 +61,7 @@ const Index = () => {
                   <div className="flex flex-col items-center text-center p-4">
                     <Film className="w-10 h-10 text-cinematic-accent mb-3" />
                     <h3 className="text-lg font-heading font-medium text-white mb-2">Projects</h3>
-                    <p className="text-sm text-gray-400 mb-3">Explore my in-development short film scripts</p>
+                    <p className="text-sm text-gray-400 mb-3">Explore our in-development short films</p>
                     <Link 
                       to="/projects" 
                       className="text-xs uppercase tracking-wide text-cinematic-accent hover:text-white transition-colors"
@@ -79,7 +78,7 @@ const Index = () => {
                       to="/contact" 
                       className="text-xs uppercase tracking-wide text-cinematic-accent hover:text-white transition-colors"
                     >
-                      Contact Me
+                      Contact Us
                     </Link>
                   </div>
                 </div>

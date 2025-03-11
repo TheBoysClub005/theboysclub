@@ -31,7 +31,7 @@ const Hero = () => {
             "text-cinematic-silver font-mono text-sm tracking-[0.2em] uppercase transform transition-transform duration-1000",
             isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           )}>
-            From viewer to visionary
+            Film Making Company
           </p>
         </div>
         
@@ -40,7 +40,7 @@ const Hero = () => {
             "font-heading font-bold text-4xl md:text-6xl lg:text-7xl tracking-tight text-white transform transition-transform duration-1000 delay-300",
             isLoaded ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"
           )}>
-            <span className="text-cinematic-accent">Nikhil</span> Reddy Nookala
+            <span className="text-cinematic-accent">The</span> Boy's Club
           </h1>
         </div>
         
@@ -49,7 +49,7 @@ const Hero = () => {
             "max-w-lg mx-auto text-gray-300 transform transition-transform duration-1000 delay-500",
             isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           )}>
-            Emerging filmmaker from Hyderabad, India, blending Western cinematic techniques 
+            A passionate filmmaking collective from Hyderabad, India, blending Western cinematic techniques 
             with Indian storytelling traditions.
           </p>
         </div>
@@ -62,7 +62,7 @@ const Hero = () => {
             to="/about" 
             className="group inline-flex items-center px-6 py-3 bg-transparent border border-cinematic-accent text-cinematic-accent rounded hover:bg-cinematic-accent/10 transition-all duration-300"
           >
-            Discover My Story
+            Discover Our Story
             <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>

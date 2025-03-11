@@ -1,27 +1,37 @@
 
 import { useEffect } from 'react';
-import { Star } from 'lucide-react';
+import { Film, Users } from 'lucide-react';
 
 const About = () => {
   useEffect(() => {
-    document.title = "About Me | Nikhil Reddy Nookala";
+    document.title = "About | The Boy's Club";
   }, []);
 
-  const influences = [
+  const teamMembers = [
     {
-      name: "Christopher Nolan",
-      contribution: "Complex narratives and visual innovation",
-      image: "https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=800&auto=format&fit=crop"
+      name: "Nikhil Reddy Nookala",
+      role: "Founder & Director",
+      bio: "Passionate filmmaker with a vision to blend Western cinematic techniques with Indian storytelling traditions."
     },
     {
-      name: "SS Rajamouli",
-      contribution: "Grand spectacle and emotional storytelling",
-      image: "https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=800&auto=format&fit=crop"
+      name: "Abhishek",
+      role: "Assistant Director",
+      bio: "Works closely with Nikhil and shares the same passion for filmmaking. Key partner in the creative process."
     },
     {
-      name: "Nag Ashwin",
-      contribution: "Blending tradition with futuristic vision",
-      image: "https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=800&auto=format&fit=crop"
+      name: "Aditya Om",
+      role: "Team Member",
+      bio: "An essential part of The Boy's Club, bringing unique perspectives to our productions."
+    },
+    {
+      name: "Arhanth",
+      role: "Team Member",
+      bio: "Contributing creative ideas and support to our filmmaking journey."
+    },
+    {
+      name: "Mukundh",
+      role: "Team Member",
+      bio: "A valuable member of our filmmaking collective, helping us bring stories to life."
     }
   ];
 
@@ -42,26 +52,26 @@ const About = () => {
             
             <div className="prose prose-invert max-w-none">
               <p className="text-xl text-gray-300 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-                I'm just a guy who watches films all the time, now taking the leap to create them.
+                We're just a group of friends who watch films all the time, now taking the leap to create them.
               </p>
               
               <div className="space-y-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.9s' }}>
                 <p className="text-gray-400">
-                  Born and raised in Hyderabad, India, my journey into filmmaking began with a passion for 
-                  storytelling that transcends cultural boundaries. As an emerging filmmaker, I'm focused 
-                  on developing short film scripts that blend the technical precision of Western cinema 
+                  Based in Hyderabad, India, our journey into filmmaking began with a shared passion for 
+                  storytelling that transcends cultural boundaries. As an emerging filmmaking collective, we're focused 
+                  on developing short films that blend the technical precision of Western cinema 
                   with the rich narrative traditions of Indian storytelling.
                 </p>
                 
                 <p className="text-gray-400">
-                  While I'm new to the craft of filmmaking, I bring years of analytical viewing and a 
-                  deep understanding of cinematic language. My background in Hyderabad has given me a 
-                  unique perspective that I'm eager to share through my work.
+                  While we're new to the craft of filmmaking, we bring our combined perspectives and a 
+                  deep understanding of cinematic language. Our background in Hyderabad has given us a 
+                  unique viewpoint that we're eager to share through our work.
                 </p>
                 
                 <p className="text-gray-400">
-                  Currently, I'm developing several short film scripts that explore themes of identity, 
-                  perception, and time—concepts that have fascinated me throughout my journey as a film enthusiast.
+                  Currently, we're developing several short film projects that explore themes of identity, 
+                  perception, and time—concepts that have fascinated us throughout our journey as film enthusiasts.
                 </p>
               </div>
             </div>
@@ -69,38 +79,26 @@ const About = () => {
           
           <div className="mt-16 pt-16 border-t border-gray-800">
             <h2 className="text-2xl md:text-3xl font-heading font-semibold text-white mb-12 text-center">
-              Cinematic Influences
+              Meet Our Team
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {influences.map((influence, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {teamMembers.map((member, index) => (
                 <div 
-                  key={influence.name} 
+                  key={member.name} 
                   className="glass-card rounded-md overflow-hidden opacity-0 animate-fade-in"
-                  style={{ animationDelay: `${0.3 * (index + 1)}s` }}
+                  style={{ animationDelay: `${0.2 * (index + 1)}s` }}
                 >
-                  <div className="relative h-48 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-cinematic-black/80 z-10" />
-                    <img 
-                      src={influence.image} 
-                      alt={influence.name} 
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute bottom-4 left-4 z-20">
-                      <div className="flex items-center">
-                        <Star className="w-4 h-4 text-cinematic-gold mr-1" />
-                        <Star className="w-4 h-4 text-cinematic-gold mr-1" />
-                        <Star className="w-4 h-4 text-cinematic-gold" />
-                      </div>
-                    </div>
-                  </div>
-                  
                   <div className="p-6">
+                    <Users className="w-10 h-10 text-cinematic-accent mb-4" />
                     <h3 className="text-xl font-heading font-medium text-white mb-2">
-                      {influence.name}
+                      {member.name}
                     </h3>
+                    <div className="text-sm text-cinematic-accent mb-3">
+                      {member.role}
+                    </div>
                     <p className="text-sm text-gray-400">
-                      {influence.contribution}
+                      {member.bio}
                     </p>
                   </div>
                 </div>

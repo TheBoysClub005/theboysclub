@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 const Projects = () => {
   useEffect(() => {
-    document.title = "Projects | Nikhil Reddy Nookala";
+    document.title = "Projects | The Boy's Club";
   }, []);
 
   const [activeProject, setActiveProject] = useState(0);
@@ -23,27 +23,6 @@ const Projects = () => {
       synopsis: "A non-linear narrative that follows a character's life in reverse, revealing how seemingly inconsequential decisions lead to profound consequences.",
       genre: "Drama",
       visual: "https://images.unsplash.com/photo-1581985673473-0784a7a44e39?w=800&auto=format&fit=crop"
-    },
-    {
-      title: "Echoes of Time",
-      status: "In Development",
-      synopsis: "A young photographer in Hyderabad discovers that his camera captures moments from different timelines, forcing him to confront the consequences of altering the past.",
-      genre: "Sci-Fi / Drama",
-      visual: "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=800&auto=format&fit=crop"
-    },
-    {
-      title: "The Last Storyteller",
-      status: "Concept Stage",
-      synopsis: "In a near-future where digital entertainment has replaced traditional storytelling, an elderly narrator in rural India fights to preserve the art of oral tradition.",
-      genre: "Drama",
-      visual: "https://images.unsplash.com/photo-1524026458548-0e5531bf7034?w=800&auto=format&fit=crop"
-    },
-    {
-      title: "Parallel Dreams",
-      status: "Concept Stage",
-      synopsis: "Two strangers—one in Hyderabad, one in London—begin experiencing each other's lives in their dreams, leading to a journey that transcends physical boundaries.",
-      genre: "Psychological Drama",
-      visual: "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=800&auto=format&fit=crop"
     }
   ];
 
@@ -63,16 +42,16 @@ const Projects = () => {
             <div className="h-px w-24 bg-cinematic-accent mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.5s' }}></div>
             
             <p className="text-xl text-gray-300 opacity-0 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-              Currently developing short film scripts that blend technical innovation with emotional storytelling.
+              Currently developing short films that blend technical innovation with emotional storytelling.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <div 
                 key={project.title}
                 className={`glass-card rounded-md overflow-hidden transform transition-all duration-500 opacity-0 animate-fade-in ${
-                  activeProject === index ? 'md:col-span-2 scale-105' : ''
+                  activeProject === index ? 'scale-105' : ''
                 }`}
                 style={{ animationDelay: `${0.3 * (index + 1)}s` }}
                 onClick={() => setActiveProject(index)}
@@ -133,7 +112,7 @@ const Projects = () => {
                 </h2>
                 
                 <p className="text-gray-400 mb-6">
-                  I'm always looking to connect with fellow filmmakers, writers, cinematographers, 
+                  We're always looking to connect with fellow filmmakers, writers, cinematographers, 
                   and other creatives who share a passion for innovative storytelling.
                 </p>
                 

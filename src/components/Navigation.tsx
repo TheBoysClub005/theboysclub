@@ -41,7 +41,11 @@ const Navigation = () => {
       >
         <div className="cinematic-container flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2 group">
-            <Film className="text-cinematic-accent w-6 h-6 transition-transform duration-500 group-hover:rotate-12" />
+            <img 
+              src="/lovable-uploads/dd83d7de-2447-4b17-8740-05614e83ef0a.png" 
+              alt="The Boy's Club Logo" 
+              className="w-10 h-10 transition-transform duration-500 group-hover:rotate-12" 
+            />
             <span className="font-heading font-semibold text-white tracking-wider">
               <span className="text-cinematic-accent">The</span> Boy's Club
             </span>
