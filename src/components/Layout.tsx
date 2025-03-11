@@ -1,7 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Toaster } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 import Navigation from './Navigation';
 import AudioToggle from './AudioToggle';
 import PageTransition from './PageTransition';
@@ -20,8 +20,9 @@ const Layout = () => {
   }, []);
 
   const toggleAudio = () => {
-    setAudioEnabled(prev => !prev);
-    // Audio toggling logic will be handled in the AudioToggle component
+    const newState = !audioEnabled;
+    setAudioEnabled(newState);
+    toast.info(newState ? "Ambient audio enabled" : "Ambient audio muted");
   };
 
   if (loading) {
