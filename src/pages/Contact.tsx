@@ -5,7 +5,7 @@ import { toast } from 'sonner';
 
 const Contact = () => {
   useEffect(() => {
-    document.title = "Contact | Nikhil Reddy Nookala";
+    document.title = "Contact | The_Boys_Club_Lovable.app";
   }, []);
 
   const copyEmailToClipboard = () => {

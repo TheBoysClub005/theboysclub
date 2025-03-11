@@ -12,7 +12,7 @@ const NotFound = () => {
       location.pathname
     );
     
-    document.title = "404 | Page Not Found";
+    document.title = "404 | The_Boys_Club_Lovable.app";
   }, [location.pathname]);
 
   return (
