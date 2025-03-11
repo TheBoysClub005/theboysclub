@@ -1,5 +1,6 @@
+
 import { useEffect, useState } from 'react';
-import { MessageSquare, Send, Link } from 'lucide-react';
+import { MessageSquare, Send, Link, Mail } from 'lucide-react';
 import { toast } from 'sonner';
 
 const Contact = () => {
@@ -21,15 +22,31 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setLoading(false);
-      toast.success("Message sent successfully!", {
-        description: "Thank you for reaching out. I'll get back to you soon."
+    try {
+      // Prepare email data
+      const emailContent = {
+        to: "theboysclub005@gmail.com",
+        from: formData.email,
+        subject: `Contact Form: ${formData.subject}`,
+        body: `
+          Name: ${formData.name}
+          Email: ${formData.email}
+          
+          Message:
+          ${formData.message}
+        `
+      };
+      
+      // Using mailto link to open default email client
+      const mailtoLink = `mailto:${emailContent.to}?subject=${encodeURIComponent(emailContent.subject)}&body=${encodeURIComponent(emailContent.body)}`;
+      window.open(mailtoLink);
+      
+      toast.success("Email client opened!", {
+        description: "Please send the email from your client to complete the process."
       });
       
       // Reset form
@@ -39,7 +56,14 @@ const Contact = () => {
         subject: '',
         message: ''
       });
-    }, 1500);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast.error("Failed to open email client", {
+        description: "Please try again or contact directly at theboysclub005@gmail.com"
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -74,6 +98,22 @@ const Contact = () => {
                         <h3 className="text-white font-medium mb-1">Collaboration Opportunities</h3>
                         <p className="text-sm text-gray-400">
                           Looking for emerging filmmakers in Hyderabad to collaborate on short film projects.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="glass-card p-6 rounded-md">
+                    <div className="flex items-start">
+                      <div className="mt-1">
+                        <Mail className="w-5 h-5 text-cinematic-accent" />
+                      </div>
+                      <div className="ml-4">
+                        <h3 className="text-white font-medium mb-1">Email Us</h3>
+                        <p className="text-sm text-gray-400">
+                          <a href="mailto:theboysclub005@gmail.com" className="hover:text-white transition-colors">
+                            theboysclub005@gmail.com
+                          </a>
                         </p>
                       </div>
                     </div>
