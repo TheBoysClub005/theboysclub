@@ -12,17 +12,17 @@ const Index = () => {
   const directors = [
     {
       name: "Christopher Nolan",
-      image: "https://upload.wikimedia.org/wikipedia/commons/9/95/Christopher_Nolan_Cannes_2018.jpg",
+      image: "/lovable-uploads/9cb031ca-7c80-40b0-a42c-aa00464b63c5.png",
       description: "Complex narratives and visual innovation"
     },
     {
       name: "SS Rajamouli",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/SS_Rajamouli_at_RRR_Promotion.jpg/800px-SS_Rajamouli_at_RRR_Promotion.jpg",
+      image: "/lovable-uploads/2f2806f7-6857-4a6e-b90a-d8e343523910.png",
       description: "Grand spectacle and emotional storytelling"
     },
     {
       name: "Nag Ashwin",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Nag_Ashwin.jpg/330px-Nag_Ashwin.jpg",
+      image: "/lovable-uploads/28223697-03a5-4a49-832b-e1a4a2a34c2a.png",
       description: "Blending tradition with futuristic vision"
     }
   ];
