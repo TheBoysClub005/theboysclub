@@ -12,21 +12,15 @@ const Index = () => {
   const directors = [
     {
       name: "Christopher Nolan",
-      image: "/lovable-uploads/9cb031ca-7c80-40b0-a42c-aa00464b63c5.png",
-      posterImage: "/lovable-uploads/7d73a9e3-f4e9-4822-b9c1-af75f4f7022b.png",
-      description: "Complex narratives and visual innovation"
+      image: "https://upload.wikimedia.org/wikipedia/commons/9/95/Christopher_Nolan_Cannes_2018.jpg",
     },
     {
       name: "SS Rajamouli",
-      image: "/lovable-uploads/2f2806f7-6857-4a6e-b90a-d8e343523910.png",
-      posterImage: "/lovable-uploads/7d73a9e3-f4e9-4822-b9c1-af75f4f7022b.png",
-      description: "Grand spectacle and emotional storytelling"
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/SS_Rajamouli_at_RRR_Promotion.jpg/800px-SS_Rajamouli_at_RRR_Promotion.jpg",
     },
     {
       name: "Nag Ashwin",
-      image: "/lovable-uploads/28223697-03a5-4a49-832b-e1a4a2a34c2a.png",
-      posterImage: "/lovable-uploads/7d73a9e3-f4e9-4822-b9c1-af75f4f7022b.png",
-      description: "Blending tradition with futuristic vision"
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Nag_Ashwin.jpg/330px-Nag_Ashwin.jpg",
     }
   ];
 
@@ -111,37 +105,18 @@ const Index = () => {
           {/* Director Inspirations */}
           <div className="mt-24">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-heading font-bold text-white mb-4">Cinematic Influences</h2>
+              <h2 className="text-3xl font-heading font-bold text-white mb-4">Cinematic Inspirations</h2>
               <p className="text-gray-300 max-w-2xl mx-auto">Visionary directors whose work has profoundly influenced my approach to filmmaking</p>
             </div>
             
-            {/* Movie posters influence section */}
-            <div className="mb-16">
-              <img 
-                src="/lovable-uploads/ad95f06b-b0c5-4937-ae42-b88547f7dbf9.png" 
-                alt="Cinematic Influences" 
-                className="w-full rounded-lg shadow-lg opacity-0 animate-fade-in" 
-                style={{ animationDelay: '0.8s' }}
-              />
-            </div>
-            
-            {/* Directors grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {directors.map((director) => (
                 <div key={director.name} className="glass-card rounded-md overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: '1s' }}>
                   <div className="h-64 overflow-hidden">
                     <img src={director.image} alt={director.name} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
                   </div>
-                  <div className="p-4">
-                    <h3 className="font-heading text-xl text-white mb-2">{director.name}</h3>
-                    <p className="text-gray-400 text-sm mb-3">{director.description}</p>
-                    <div className="h-40 overflow-hidden rounded-md">
-                      <img 
-                        src={director.posterImage} 
-                        alt={`${director.name} movie posters`} 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                  <div className="p-4 text-center">
+                    <h3 className="font-heading text-xl text-white">{director.name}</h3>
                   </div>
                 </div>
               ))}
