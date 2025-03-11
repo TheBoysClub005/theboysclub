@@ -13,16 +13,19 @@ const Index = () => {
     {
       name: "Christopher Nolan",
       image: "/lovable-uploads/9cb031ca-7c80-40b0-a42c-aa00464b63c5.png",
+      posterImage: "/lovable-uploads/7d73a9e3-f4e9-4822-b9c1-af75f4f7022b.png",
       description: "Complex narratives and visual innovation"
     },
     {
       name: "SS Rajamouli",
       image: "/lovable-uploads/2f2806f7-6857-4a6e-b90a-d8e343523910.png",
+      posterImage: "/lovable-uploads/7d73a9e3-f4e9-4822-b9c1-af75f4f7022b.png",
       description: "Grand spectacle and emotional storytelling"
     },
     {
       name: "Nag Ashwin",
       image: "/lovable-uploads/28223697-03a5-4a49-832b-e1a4a2a34c2a.png",
+      posterImage: "/lovable-uploads/7d73a9e3-f4e9-4822-b9c1-af75f4f7022b.png",
       description: "Blending tradition with futuristic vision"
     }
   ];
@@ -131,7 +134,14 @@ const Index = () => {
                   </div>
                   <div className="p-4">
                     <h3 className="font-heading text-xl text-white mb-2">{director.name}</h3>
-                    <p className="text-gray-400 text-sm">{director.description}</p>
+                    <p className="text-gray-400 text-sm mb-3">{director.description}</p>
+                    <div className="h-40 overflow-hidden rounded-md">
+                      <img 
+                        src={director.posterImage} 
+                        alt={`${director.name} movie posters`} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               ))}
