@@ -18,7 +18,6 @@ const AudioToggle = ({ isEnabled, onToggle }: AudioToggleProps) => {
     // Create audio element if it doesn't exist
     if (!audioRef.current) {
       try {
-        // Use an absolute URL to ensure the audio file is found
         const audioPath = `${window.location.origin}/ambient.mp3`;
         console.log('Attempting to load audio from:', audioPath);
         
@@ -26,24 +25,28 @@ const AudioToggle = ({ isEnabled, onToggle }: AudioToggleProps) => {
         audio.loop = true;
         audio.volume = 0.2;
         
-        // Add event listeners
         audio.addEventListener('canplaythrough', () => {
           setAudioLoaded(true);
           setLoadFailed(false);
           console.log('Audio loaded and ready to play');
+          
+          // Try to play automatically when loaded
+          if (isEnabled) {
+            audio.play().catch((error) => {
+              console.log('Initial autoplay failed:', error);
+              toast.error("Click anywhere on the page to enable audio");
+            });
+          }
         });
         
         audio.addEventListener('error', (e) => {
           console.error('Audio error:', e);
-          console.error('Audio src that failed:', audioPath);
           setLoadFailed(true);
           setAudioLoaded(false);
-          toast.error('Could not load audio file. Please make sure "ambient.mp3" exists in the public directory.');
+          toast.error('Could not load audio file');
         });
         
         audioRef.current = audio;
-        
-        // Attempt preload
         audio.load();
       } catch (e) {
         console.error('Failed to initialize audio:', e);
@@ -60,28 +63,32 @@ const AudioToggle = ({ isEnabled, onToggle }: AudioToggleProps) => {
         audioRef.current = null;
       }
     };
-  }, []);
+  }, [isEnabled]);
+
+  // Add click listener to the document to handle user interaction requirement
+  useEffect(() => {
+    const handleFirstInteraction = () => {
+      if (audioRef.current && isEnabled && audioLoaded) {
+        audioRef.current.play().catch(console.error);
+      }
+      document.removeEventListener('click', handleFirstInteraction);
+    };
+
+    document.addEventListener('click', handleFirstInteraction);
+    return () => document.removeEventListener('click', handleFirstInteraction);
+  }, [isEnabled, audioLoaded]);
   
   useEffect(() => {
     if (!audioRef.current || !audioLoaded || loadFailed) return;
     
-    // Play or pause based on isEnabled state
     if (isEnabled) {
-      const playPromise = audioRef.current.play();
-      
-      // Handle autoplay restrictions
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          console.error("Audio autoplay failed:", error);
-          toast.error("Browser blocked autoplay. Click again to enable audio.");
-          // Update the UI state to match actual audio state
-          onToggle();
-        });
-      }
+      audioRef.current.play().catch((error) => {
+        console.error("Audio play failed:", error);
+      });
     } else {
       audioRef.current.pause();
     }
-  }, [isEnabled, audioLoaded, loadFailed, onToggle]);
+  }, [isEnabled, audioLoaded, loadFailed]);
   
   const handleButtonClick = () => {
     if (loadFailed) {

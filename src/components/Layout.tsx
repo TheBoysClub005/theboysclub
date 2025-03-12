@@ -8,7 +8,7 @@ import AudioToggle from './AudioToggle';
 import PageTransition from './PageTransition';
 
 const Layout = () => {
-  const [audioEnabled, setAudioEnabled] = useState(false);
+  const [audioEnabled, setAudioEnabled] = useState(true); // Changed to true by default
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
