@@ -34,7 +34,7 @@ const Layout = () => {
             <div className="h-full bg-cinematic-accent animate-reveal-text"></div>
           </div>
           <p className="mt-4 text-cinematic-silver font-mono text-sm tracking-wider opacity-0 animate-fade-in-delay">
-            THE BOY'S CLUB
+            WELCOME
           </p>
         </div>
       </div>
