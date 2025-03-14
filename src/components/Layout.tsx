@@ -30,6 +30,11 @@ const Layout = () => {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-cinematic-black z-50">
         <div className="flex flex-col items-center px-4">
+          <img 
+            src="/lovable-uploads/dd83d7de-2447-4b17-8740-05614e83ef0a.png" 
+            alt="The Boy's Club Logo" 
+            className="w-16 h-16 mb-4 animate-pulse-subtle"
+          />
           <div className="h-0.5 w-24 bg-cinematic-silver overflow-hidden">
             <div className="h-full bg-cinematic-accent animate-reveal-text"></div>
           </div>
