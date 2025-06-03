@@ -15,14 +15,18 @@ const Projects = () => {
       status: "In Development",
       synopsis: "When four bored friends stumble across a cold case long buried in silence, their obsession to uncover the truth spirals into a dangerous game of digital breadcrumbs, half-truths, and haunting revelations. Inspired by real threads and forgotten headlines, CASE: REOPENED is a gripping crime thriller that asks: what if the wrong story was accepted as truth?",
       genre: "Crime thriller",
-      visual: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&auto=format&fit=crop"
+      visual: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&auto=format&fit=crop",
+      expectedRelease: "August 2025",
+      showMoreDetails: false
     },
     {
       title: "In Reverse",
       status: "Script Development",
       synopsis: "A nonlinear narrative told predominantly backward, revealing how four friends ended up in a moment of crisis. Each reverse sequence reveals new context that changes our understanding of their relationships and choices.",
       genre: "Drama",
-      visual: "https://images.unsplash.com/photo-1581985673473-0784a7a44e39?w=800&auto=format&fit=crop"
+      visual: "https://images.unsplash.com/photo-1581985673473-0784a7a44e39?w=800&auto=format&fit=crop",
+      expectedRelease: "2025",
+      showMoreDetails: true
     }
   ];
 
@@ -89,12 +93,14 @@ const Projects = () => {
                     <div className="animate-fade-in">
                       <div className="mt-6 pt-4 border-t border-gray-700">
                         <div className="flex justify-between items-center">
-                          <span className="text-xs text-gray-500">Expected completion: 2025</span>
+                          <span className="text-xs text-gray-500">Expected release: {project.expectedRelease}</span>
                           
-                          <button className="group flex items-center text-cinematic-accent hover:text-white transition-colors">
-                            <span className="text-sm">More details</span>
-                            <ArrowRight className="ml-1 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                          </button>
+                          {project.showMoreDetails && (
+                            <button className="group flex items-center text-cinematic-accent hover:text-white transition-colors">
+                              <span className="text-sm">More details</span>
+                              <ArrowRight className="ml-1 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                            </button>
+                          )}
                         </div>
                       </div>
                     </div>
