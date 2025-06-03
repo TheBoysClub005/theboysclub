@@ -11,10 +11,10 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Room 404",
+      title: "Case Reopened",
       status: "In Development",
-      synopsis: "A psychological thriller about four college students who become trapped in a strange dormitory room that seems to exist outside normal reality. As they try to escape, the room begins to manifest their deepest digital secrets and online personas.",
-      genre: "Sci-fi thriller",
+      synopsis: "When four bored friends stumble across a cold case long buried in silence, their obsession to uncover the truth spirals into a dangerous game of digital breadcrumbs, half-truths, and haunting revelations. Inspired by real threads and forgotten headlines, CASE: REOPENED is a gripping crime thriller that asks: what if the wrong story was accepted as truth?",
+      genre: "Crime thriller",
       visual: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&auto=format&fit=crop"
     },
     {
