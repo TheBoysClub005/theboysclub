@@ -1,6 +1,5 @@
-
 import { useEffect } from 'react';
-import { Film, Users } from 'lucide-react';
+import { Film, Users, Shield } from 'lucide-react';
 
 const About = () => {
   useEffect(() => {
@@ -68,6 +67,41 @@ const About = () => {
                   Currently, I'm developing several short film projects that explore themes of identity, 
                   perception, and time—concepts that have fascinated me throughout my journey as a film enthusiast.
                 </p>
+              </div>
+            </div>
+          </div>
+          
+          {/* New Section: The Backbone of The Boy's Club */}
+          <div className="mt-16 pt-16 border-t border-gray-800">
+            <h2 className="text-2xl md:text-3xl font-heading font-semibold text-white mb-12 text-center">
+              The Backbone of The Boy's Club
+            </h2>
+            
+            <div className="max-w-4xl mx-auto">
+              <div className="glass-card rounded-md overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                <div className="p-8">
+                  <div className="flex items-center mb-6">
+                    <Shield className="w-12 h-12 text-cinematic-accent mr-4" />
+                    <div>
+                      <h3 className="text-2xl font-heading font-medium text-white">
+                        Sharath Reddy Nookala
+                      </h3>
+                      <div className="text-cinematic-accent font-medium">
+                        Co-Founder & Guardian of Dreams
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-300 leading-relaxed">
+                    Every visionary needs a sentinel. For The Boy's Club, that sentinel is Sharath Reddy Nookala. 
+                    His unwavering faith is the bedrock upon which these stories rise; his resolve, the silent thunder 
+                    behind every risk we dare to take. Sharath isn't just a brother — he's a strategist, protector, 
+                    and the first to believe when the world hesitates. With his keen eye for detail and an unshakeable 
+                    moral compass, Sharath ensures that every frame we capture not only stirs hearts but also stands 
+                    for something greater. He is the quiet architect of our ambition, the reason our stories don't 
+                    just entertain — they endure.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
