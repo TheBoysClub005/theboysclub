@@ -16,16 +16,6 @@ const About = () => {
       name: "Aditya Om",
       role: "Friend & Helper",
       bio: "Brings unique perspectives to my productions and supports my filmmaking journey."
-    },
-    {
-      name: "Arhanth",
-      role: "Friend & Helper",
-      bio: "Contributes creative ideas and support to my filmmaking journey."
-    },
-    {
-      name: "Mukundh",
-      role: "Friend & Helper",
-      bio: "Helps me bring stories to life with valuable input and assistance."
     }
   ];
 
